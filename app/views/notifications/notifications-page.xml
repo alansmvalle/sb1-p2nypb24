@@ -1,0 +1,27 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+    <ActionBar title="Notifications" class="bg-blue-500 text-white">
+        <NavigationButton visibility="collapsed" />
+    </ActionBar>
+    
+    <GridLayout rows="*, auto">
+        <ListView row="0" items="{{ notifications }}" class="list-group">
+            <ListView.itemTemplate>
+                <GridLayout columns="auto, *" class="p-4 border-b border-gray-200">
+                    <Label col="0" text="{{ icon }}" class="fas text-2xl mr-3" class="{{ read ? 'text-gray-400' : 'text-blue-500' }}" />
+                    <StackLayout col="1">
+                        <Label text="{{ title }}" class="font-semibold" />
+                        <Label text="{{ message }}" class="text-sm text-gray-500" textWrap="true" />
+                        <Label text="{{ time }}" class="text-xs text-gray-400 mt-1" />
+                    </StackLayout>
+                </GridLayout>
+            </ListView.itemTemplate>
+        </ListView>
+        
+        <GridLayout row="1" columns="*, *, *, *" class="bg-white p-4 border-t border-gray-200">
+            <Label col="0" text="&#xf015;" class="fas text-center text-gray-500" tap="onHomeTap" />
+            <Label col="1" text="&#xf0ae;" class="fas text-center text-gray-500" tap="onTasksTap" />
+            <Label col="2" text="&#xf133;" class="fas text-center text-gray-500" tap="onCalendarTap" />
+            <Label col="3" text="&#xf0f3;" class="fas text-center text-blue-500" tap="onNotificationsTap" />
+        </GridLayout>
+    </GridLayout>
+</Page>

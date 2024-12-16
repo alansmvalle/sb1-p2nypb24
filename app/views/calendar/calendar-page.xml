@@ -1,0 +1,37 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+    <ActionBar title="Calendar" class="bg-blue-500 text-white">
+        <NavigationButton visibility="collapsed" />
+    </ActionBar>
+    
+    <GridLayout rows="auto, *, auto">
+        <GridLayout row="0" columns="auto, *, auto" class="p-4 bg-white border-b border-gray-200">
+            <Label col="0" text="&#xf053;" class="fas" tap="{{ previousMonth }}" />
+            <Label col="1" text="{{ currentMonth }}" class="text-center font-bold" />
+            <Label col="2" text="&#xf054;" class="fas" tap="{{ nextMonth }}" />
+        </GridLayout>
+
+        <ListView row="1" items="{{ events }}" class="list-group">
+            <ListView.itemTemplate>
+                <GridLayout columns="auto, *" class="p-4 border-b border-gray-200">
+                    <StackLayout col="0" class="mr-4">
+                        <Label text="{{ startTime }}" class="text-sm text-gray-500" />
+                        <Label text="{{ endTime }}" class="text-sm text-gray-500" />
+                    </StackLayout>
+                    <StackLayout col="1">
+                        <Label text="{{ title }}" class="font-semibold" />
+                        <Label text="{{ location }}" class="text-sm text-gray-500" />
+                    </StackLayout>
+                </GridLayout>
+            </ListView.itemTemplate>
+        </ListView>
+
+        <Button row="1" text="+" class="fab-button" tap="{{ addEvent }}" />
+        
+        <GridLayout row="2" columns="*, *, *, *" class="bg-white p-4 border-t border-gray-200">
+            <Label col="0" text="&#xf015;" class="fas text-center text-gray-500" tap="onHomeTap" />
+            <Label col="1" text="&#xf0ae;" class="fas text-center text-gray-500" tap="onTasksTap" />
+            <Label col="2" text="&#xf133;" class="fas text-center text-blue-500" tap="onCalendarTap" />
+            <Label col="3" text="&#xf086;" class="fas text-center text-gray-500" tap="onChatTap" />
+        </GridLayout>
+    </GridLayout>
+</Page>

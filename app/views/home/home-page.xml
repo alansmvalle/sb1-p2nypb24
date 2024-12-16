@@ -1,0 +1,51 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+    <ActionBar title="Project Hub" class="bg-blue-500 text-white" />
+    
+    <GridLayout rows="*, auto">
+        <ScrollView row="0">
+            <StackLayout class="p-4 space-y-4">
+                <!-- Welcome Section -->
+                <Label text="Welcome back!" class="text-2xl font-bold" />
+                
+                <!-- Quick Actions Grid -->
+                <GridLayout columns="*, *" rows="*, *" class="mt-4" rowGap="10" columnGap="10">
+                    <!-- Tasks Card -->
+                    <StackLayout col="0" row="0" class="bg-white p-4 rounded-lg shadow" tap="onTasksTap">
+                        <Label text="&#xf0ae;" class="fas text-3xl text-blue-500" />
+                        <Label text="Tasks" class="font-semibold mt-2" />
+                        <Label text="{{ pendingTasks }}" class="text-gray-500" />
+                    </StackLayout>
+                    
+                    <!-- Calendar Card -->
+                    <StackLayout col="1" row="0" class="bg-white p-4 rounded-lg shadow" tap="onCalendarTap">
+                        <Label text="&#xf133;" class="fas text-3xl text-green-500" />
+                        <Label text="Calendar" class="font-semibold mt-2" />
+                        <Label text="{{ todayEvents }}" class="text-gray-500" />
+                    </StackLayout>
+                    
+                    <!-- Notifications Card -->
+                    <StackLayout col="0" row="1" class="bg-white p-4 rounded-lg shadow" tap="onNotificationsTap">
+                        <Label text="&#xf0f3;" class="fas text-3xl text-yellow-500" />
+                        <Label text="Notifications" class="font-semibold mt-2" />
+                        <Label text="{{ unreadNotifications }}" class="text-gray-500" />
+                    </StackLayout>
+                    
+                    <!-- Team Chat Card -->
+                    <StackLayout col="1" row="1" class="bg-white p-4 rounded-lg shadow" tap="onChatTap">
+                        <Label text="&#xf086;" class="fas text-3xl text-purple-500" />
+                        <Label text="Team Chat" class="font-semibold mt-2" />
+                        <Label text="{{ unreadMessages }}" class="text-gray-500" />
+                    </StackLayout>
+                </GridLayout>
+            </StackLayout>
+        </ScrollView>
+        
+        <!-- Bottom Navigation -->
+        <GridLayout row="1" columns="*, *, *, *" class="bg-white p-4 border-t border-gray-200">
+            <Label col="0" text="&#xf015;" class="fas text-center text-blue-500" tap="onHomeTap" />
+            <Label col="1" text="&#xf0ae;" class="fas text-center text-gray-500" tap="onTasksTap" />
+            <Label col="2" text="&#xf133;" class="fas text-center text-gray-500" tap="onCalendarTap" />
+            <Label col="3" text="&#xf086;" class="fas text-center text-gray-500" tap="onChatTap" />
+        </GridLayout>
+    </GridLayout>
+</Page>

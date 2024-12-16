@@ -1,0 +1,10 @@
+<GridLayout columns="*, *, *, *" class="bg-white p-4 border-t border-gray-200">
+    <Label col="0" text="&#xf015;" class="fas text-center" tap="onHomeTap" 
+           class="{{ activeTab === 'home' ? 'text-blue-500' : 'text-gray-500' }}" />
+    <Label col="1" text="&#xf0ae;" class="fas text-center" tap="onTasksTap"
+           class="{{ activeTab === 'tasks' ? 'text-blue-500' : 'text-gray-500' }}" />
+    <Label col="2" text="&#xf133;" class="fas text-center" tap="onCalendarTap"
+           class="{{ activeTab === 'calendar' ? 'text-blue-500' : 'text-gray-500' }}" />
+    <Label col="3" text="&#xf086;" class="fas text-center" tap="onChatTap"
+           class="{{ activeTab === 'chat' ? 'text-blue-500' : 'text-gray-500' }}" />
+</GridLayout>
